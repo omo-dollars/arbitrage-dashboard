@@ -1,11 +1,2 @@
 streamlit
 requests
-pandas
-numpy
-web3
-solana
-py-solc-x
-ccxt
-aiohttp
-asyncio
-python-telegram-bot==13.15
