@@ -8,7 +8,7 @@ from datetime import datetime
 
 TOP_CHAINS = ["BSC", "Polygon", "Solana", "Arbitrum", "Optimism", "Base", "Sonic", "Sui", "Sei", "Mantle"]
 
-Pre-selected top 20 tokens (volume, volatility, profitability based)
+# Top 20 tokens based on volume, volatility, and profitability
 
 TOP_TOKENS = [
 "USDT", "USDC", "WBTC", "WETH", "AVAX", "MATIC", "SHIB", "PEPE",
@@ -45,7 +45,9 @@ def fetch_arbitrage_opportunities():
 result = []
 for chain in TOP_CHAINS:
 for token in TOP_TOKENS:
-profit = round((0.5 - 0.1) * requests.get("https://www.randomnumberapi.com/api/v1.0/random?min=1&max=10&count=1").json()[0] / 100, 4)
+try:
+random_number = requests.get("https://www.randomnumberapi.com/api/v1.0/random?min=1&max=10&count=1").json()[0]
+profit = round((0.5 - 0.1) * random_number / 100, 4)
 if profit > 0.03:
 data = {
 "timestamp": datetime.utcnow().isoformat(),
@@ -56,6 +58,8 @@ data = {
 save_to_db(data)
 send_telegram_alert(f"Profitable arbitrage on {chain}: {token} ➜ {profit*100}%")
 result.append(data)
+except:
+continue
 return result
 
 #---------------------- STREAMLIT APP ----------------------
