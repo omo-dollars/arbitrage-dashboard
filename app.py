@@ -4,7 +4,7 @@ import sqlite3
 import time
 from datetime import datetime
 
----------------------- SETTINGS ----------------------
+#---------------------- SETTINGS ----------------------
 
 TOP_CHAINS = ["BSC", "Polygon", "Solana", "Arbitrum", "Optimism", "Base", "Sonic", "Sui", "Sei", "Mantle"]
 
@@ -16,12 +16,12 @@ TOP_TOKENS = [
 "OP", "FTM", "SOL", "BNB"
 ]
 
-Telegram Bot Settings (replace with your own)
+# Telegram Bot Settings (replace with your own)
 
 TELEGRAM_BOT_TOKEN = "your_bot_token_here"
 TELEGRAM_CHAT_ID = "your_chat_id_here"
 
----------------------- FUNCTIONS ----------------------
+#---------------------- FUNCTIONS ----------------------
 
 def send_telegram_alert(message):
 url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
@@ -39,7 +39,7 @@ c.execute("INSERT INTO logs VALUES (?, ?, ?, ?)", (data["timestamp"], data["chai
 conn.commit()
 conn.close()
 
-Dummy function to simulate fetching arbitrage opportunities
+# Dummy function to simulate fetching arbitrage opportunities
 
 def fetch_arbitrage_opportunities():
 result = []
@@ -58,7 +58,7 @@ send_telegram_alert(f"Profitable arbitrage on {chain}: {token} ➜ {profit*100}%
 result.append(data)
 return result
 
----------------------- STREAMLIT APP ----------------------
+#---------------------- STREAMLIT APP ----------------------
 
 st.set_page_config(page_title="Multi-Chain Arbitrage Dashboard", layout="wide")
 st.title("🚀 Real-Time Multi-Chain Arbitrage Dashboard")
