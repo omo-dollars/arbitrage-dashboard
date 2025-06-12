@@ -14,7 +14,7 @@ MIN_TRADE_AMOUNT = 10
 
 TOKENS = ["USDT", "USDC", "WETH", "WBTC", "SHIB", "PEPE", "CAKE", "MATIC", "AVAX", "FLOKI", "OP", "SUI", "SEI", "SONIC"]
 
-Telegram config (to be set in app)
+# Telegram config (to be set in app)
 
 TELEGRAM_TOKEN = ""
 TELEGRAM_CHAT_ID = ""
