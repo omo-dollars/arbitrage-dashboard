@@ -4,7 +4,7 @@ import sqlite3
 import time
 from datetime import datetime
 
----------------------- SETTINGS ----------------------
+#---------------------- SETTINGS ----------------------
 
 CHAINS = ["BSC", "Polygon", "Arbitrum", "Optimism", "Solana", "Base", "Sui", "Sei", "Mantle", "Sonic"]
 MIN_PROFIT_USD = 0.5
@@ -19,7 +19,7 @@ Telegram config (to be set in app)
 TELEGRAM_TOKEN = ""
 TELEGRAM_CHAT_ID = ""
 
----------------------- INIT DB ----------------------
+#---------------------- INIT DB ----------------------
 
 def init_db():
 conn = sqlite3.connect("arbitrage_logs.db")
@@ -38,7 +38,7 @@ route TEXT
 conn.commit()
 conn.close()
 
----------------------- TELEGRAM ----------------------
+#---------------------- TELEGRAM ----------------------
 
 def send_telegram_alert(msg):
 if TELEGRAM_TOKEN and TELEGRAM_CHAT_ID:
@@ -49,14 +49,14 @@ requests.post(url, data=data)
 except:
 pass
 
----------------------- DUMMY PRICE FETCHER ----------------------
+#---------------------- DUMMY PRICE FETCHER ----------------------
 
 def fetch_price(token, chain):
 # Simulated API call - replace with real DEX aggregator
 import random
 return round(1 + random.uniform(-0.1, 0.1), 4)
 
----------------------- MAIN LOGIC ----------------------
+#---------------------- MAIN LOGIC ----------------------
 
 def check_arbitrage():
 results = []
@@ -77,7 +77,7 @@ results.append({
 })
 return results
 
----------------------- APP UI ----------------------
+#---------------------- APP UI ----------------------
 
 st.set_page_config(page_title="Multi-Chain Arbitrage Dashboard", layout="wide")
 st.title("🚀 Real-Time Multi-Chain Arbitrage Opportunities")
