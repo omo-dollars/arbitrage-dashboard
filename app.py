@@ -10,7 +10,7 @@ CHAINS = ["BSC", "Polygon", "Arbitrum", "Optimism", "Solana", "Base", "Sui", "Se
 MIN_PROFIT_USD = 0.5
 MIN_TRADE_AMOUNT = 10
 
-Pre-selected top 20 tokens (auto-updated in full version)
+# Pre-selected top 20 tokens (auto-updated in full version)
 
 TOKENS = ["USDT", "USDC", "WETH", "WBTC", "SHIB", "PEPE", "CAKE", "MATIC", "AVAX", "FLOKI", "OP", "SUI", "SEI", "SONIC"]
 
